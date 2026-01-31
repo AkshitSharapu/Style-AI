@@ -9,6 +9,7 @@ const LandingPage = ({ onSelectGender, onHomeClick }) => {
     const [authTab, setAuthTab] = useState('signup');
 
     const handleSelect = (gender) => {
+        console.log("Navigating to:", gender);
         toggleTheme(gender);
         onSelectGender(gender);
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -29,7 +30,7 @@ const LandingPage = ({ onSelectGender, onHomeClick }) => {
         <div className="bg-background-dark font-display text-white selection:bg-primary selection:text-white min-h-screen">
             {/* Top Navigation Bar */}
             <header className="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/10">
-                <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div
                         onClick={() => {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -43,9 +44,10 @@ const LandingPage = ({ onSelectGender, onHomeClick }) => {
                         <h2 className="text-white text-xl font-extrabold tracking-tighter uppercase">Style <span className="text-primary">AI</span></h2>
                     </div>
                     <nav className="hidden md:flex items-center gap-10">
+                        <button onClick={() => handleSelect('Male')} className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase">Men</button>
+                        <button onClick={() => handleSelect('Female')} className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase">Women</button>
                         <a className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#trends">Trends</a>
                         <a className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#how-it-works">How it Works</a>
-                        <a className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#newsletter">Pricing</a>
                     </nav>
                     <div className="flex items-center gap-6">
                         {user ? (
@@ -85,7 +87,7 @@ const LandingPage = ({ onSelectGender, onHomeClick }) => {
                 </div>
             </header>
 
-            <main className="pt-20">
+            <main className="pt-16">
                 {/* Split-Screen Hero Section */}
                 <section className="relative h-[90vh] min-h-[700px] w-full flex overflow-hidden">
                     <div

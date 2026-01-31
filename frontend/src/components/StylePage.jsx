@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useTheme } from '../context/ThemeContext';
-import { Sparkles, Zap as Bolt, Brain as Psychology, Ruler as Straighten, Search, Wand2 as MagicWand, Truck, ArrowRight, Share2, Globe, TrendingUp, LogOut, Plus, ArrowLeft } from 'lucide-react';
+import { Sparkles, Zap as Bolt, Brain as Psychology, Ruler as Straighten, Search, Wand2 as MagicWand, Truck, ArrowRight, Share2, Globe, TrendingUp, LogOut, Plus, ArrowLeft, Mail } from 'lucide-react';
 import RecommendationModal from './RecommendationModal';
 
 const StylePage = ({ gender, onBack }) => {
@@ -10,7 +10,10 @@ const StylePage = ({ gender, onBack }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [recommendation, setRecommendation] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isAuthOpen, setIsAuthOpen] = useState(false);
+    const [authTab, setAuthTab] = useState('login');
 
+    console.log("StylePage mounting for gender:", gender);
     useEffect(() => {
         const fetchTrending = async () => {
             try {
@@ -32,6 +35,11 @@ const StylePage = ({ gender, onBack }) => {
         e.target.reset();
     };
 
+    const openAuth = (tab) => {
+        setAuthTab(tab);
+        setIsAuthOpen(true);
+    };
+
     const heroImages = {
         Male: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDZZG_bM340BSDkchdPJ8TMEmtRQEy94uiNGhf6ErZMG8jE6Fl7ao_nAImt_pBvXF94a0C9kU7nJ96w_axG8nYxbSnqGZNWremAgqzcsd4WM4B70BJ06E0GJBTK_J3cJLqYeeDuzFzGgYv1xKC5yHZZ8i-xGeOkWBOlXZAAaARaqNpiJyTRON20vsVlEiD0QSX04L_OEyoYyAJm8CtxY03fPQ4BUFmMurawv_s_518T2ILlq_CEC-KIiJNIyxybdbHLqcqCr-jELNY',
         Female: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBTD3UOFhS7Fri7x_9mxIAhLgaQfWglU46-a_Vf5a9BsqVf-e--sGzV_WqNs9VFyzsJgQFbp_DVtXZRrBy16cEVOQRe7OB_SYdJ2zEj9qxnSl8gKBEm1KCAII3BbBXbTRDFVgdo_LSHFxDCJMQZ7x_Eu5GuAyxN2zfpMRehTJuRQIwN4tn7v54b9mvu1FXez9UlDXwvIS5MMBakncFMJQw6ACi6Z7Tn0SPFtr8cU7Td7-abeWbS0Dhi9_vs3wVOJmRhjcGRwxaAQJc'
@@ -41,7 +49,7 @@ const StylePage = ({ gender, onBack }) => {
         <div className="bg-background-dark font-display text-white selection:bg-primary selection:text-white min-h-screen">
             {/* Unified Header */}
             <header className="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/10">
-                <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-6">
                         <button
                             onClick={onBack}
@@ -60,36 +68,53 @@ const StylePage = ({ gender, onBack }) => {
                         </div>
                     </div>
 
-                    <nav className="hidden md:flex items-center gap-10">
+                    <nav className="hidden md:flex items-center gap-8">
                         <a className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#trends">Collections</a>
-                        <a className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#how-it-works">AI Intelligence</a>
+                        <a className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#how-it-works">Intelligence</a>
                         <a className="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#recommendation">Recommender</a>
                     </nav>
 
                     <div className="flex items-center gap-6">
-                        {user && (
-                            <div className="flex items-center gap-4 group/profile relative">
-                                <div className="text-right hidden sm:block">
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-0.5">Styling For</p>
-                                    <p className="text-sm font-bold uppercase tracking-tight">{user.name}</p>
+                        <div className="flex items-center gap-6">
+                            {user ? (
+                                <div className="flex items-center gap-4 group/profile relative">
+                                    <div className="text-right hidden sm:block">
+                                        <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-0.5">Styling For</p>
+                                        <p className="text-sm font-bold uppercase tracking-tight">{user.name}</p>
+                                    </div>
+                                    <div className="size-10 bg-primary rounded-full flex items-center justify-center text-sm font-black text-white shadow-[0_0_15px_var(--color-primary-glow)] border border-white/20">
+                                        {user.initials}
+                                    </div>
+                                    <button
+                                        onClick={logout}
+                                        className="absolute -bottom-12 right-0 bg-background-dark/95 border border-white/10 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-white hover:bg-white/5 transition-all opacity-0 group-hover/profile:opacity-100 flex items-center gap-2 shadow-2xl backdrop-blur-md z-[60]"
+                                    >
+                                        <LogOut className="w-3 h-3" />
+                                        Sign Out
+                                    </button>
                                 </div>
-                                <div className="size-10 bg-primary rounded-full flex items-center justify-center text-sm font-black text-white shadow-[0_0_15px_var(--color-primary-glow)] border border-white/20">
-                                    {user.initials}
+                            ) : (
+                                <div className="flex items-center gap-6">
+                                    <button
+                                        onClick={() => openAuth('login')}
+                                        className="text-white/70 text-sm font-bold hover:text-white transition-colors uppercase tracking-widest"
+                                    >
+                                        Login
+                                    </button>
+                                    <button
+                                        onClick={() => openAuth('signup')}
+                                        className="bg-primary hover:bg-primary/90 text-white px-8 py-2.5 rounded-xl text-xs font-black tracking-widest transition-all shadow-lg shadow-[0_0_15px_var(--color-primary-glow)] uppercase"
+                                    >
+                                        Sign Up
+                                    </button>
                                 </div>
-                                <button
-                                    onClick={logout}
-                                    className="absolute -bottom-12 right-0 bg-background-dark/95 border border-white/10 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-white hover:bg-white/5 transition-all opacity-0 group-hover/profile:opacity-100 flex items-center gap-2 shadow-2xl backdrop-blur-md z-[60]"
-                                >
-                                    <LogOut className="w-3 h-3" />
-                                    Sign Out
-                                </button>
-                            </div>
-                        )}
+                            )}
+                        </div>
                     </div>
                 </div>
             </header>
 
-            <main className="pt-20">
+            <main className="pt-16">
                 {/* Gender-Specific Hero */}
                 <section className="relative h-[80vh] min-h-[600px] w-full flex items-center overflow-hidden">
                     <div className="absolute inset-0 bg-center bg-cover scale-105" style={{ backgroundImage: `url('${heroImages[gender]}')` }}></div>
@@ -393,6 +418,11 @@ const StylePage = ({ gender, onBack }) => {
                         resultSection?.scrollIntoView({ behavior: 'smooth' });
                     }, 500);
                 }}
+            />
+            <AuthModal
+                isOpen={isAuthOpen}
+                onClose={() => setIsAuthOpen(false)}
+                initialTab={authTab}
             />
         </div>
     );
