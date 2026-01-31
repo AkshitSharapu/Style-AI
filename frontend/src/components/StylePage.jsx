@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useTheme } from '../context/ThemeContext';
 import { Sparkles, Zap as Bolt, Brain as Psychology, Ruler as Straighten, Search, Wand2 as MagicWand, Truck, ArrowRight, Share2, Globe, TrendingUp, LogOut, Plus, ArrowLeft, Mail } from 'lucide-react';
 import RecommendationModal from './RecommendationModal';
+import AuthModal from './AuthModal';
 
 const StylePage = ({ gender, onBack }) => {
     const { theme, user, logout } = useTheme();
