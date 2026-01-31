@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #7f13ec;
+  --color-primary-glow: rgba(127, 19, 236, 0.3);
+}
+
+.male-theme {
+  --color-primary: #0ea5e9;
+  /* Cobalt Blue */
+  --color-primary-glow: rgba(14, 165, 233, 0.3);
+}
+
+.female-theme {
+  --color-primary: #f43f5e;
+  /* Rose Pink */
+  --color-primary-glow: rgba(244, 63, 94, 0.3);
+}
+
+@layer base {
+  body {
+    font-family: 'Manrope', sans-serif;
+    @apply bg-background-dark text-white selection:bg-primary selection:text-white;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+}
+
+/* Restoring original classes names to satisfy JSX */
+.font-display {
+  font-family: 'Manrope', sans-serif;
+}
+
+@layer components {
+  .hero-split-overlay {
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.4) 0%, rgba(5, 5, 5, 0.8) 100%);
+  }
+
+  .glass-morphism {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full border-2 border-background-dark;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
+}

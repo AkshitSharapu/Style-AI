@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Style AI | Your Personal AI Stylist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f13ec",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#050505",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-split-overlay {
+            background: linear-gradient(180deg, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.8) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary selection:text-white">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2 group cursor-pointer">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-[0_0_15px_rgba(127,19,236,0.5)]">
+<span class="material-symbols-outlined text-xl">auto_awesome</span>
+</div>
+<h2 class="text-white text-xl font-extrabold tracking-tighter uppercase">Style <span class="text-primary">AI</span></h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#">Trends</a>
+<a class="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#">How it Works</a>
+<a class="text-white/70 hover:text-white text-sm font-medium tracking-wide transition-colors uppercase" href="#">Pricing</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-white text-sm font-bold hover:text-primary transition-colors">Sign In</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide transition-all shadow-lg">
+                    Join Waitlist
+                </button>
+</div>
+</div>
+</header>
+<main>
+<!-- Split-Screen Hero Section -->
+<section class="relative h-[90vh] min-h-[700px] w-full flex overflow-hidden">
+<!-- Men Side -->
+<div class="relative w-1/2 h-full group cursor-pointer overflow-hidden border-r border-white/5">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Modern high fashion male model in tailored coat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZZG_bM340BSDkchdPJ8TMEmtRQEy94uiNGhf6ErZMG8jE6Fl7ao_nAImt_pBvXF94a0C9kU7nJ96w_axG8nYxbSnqGZNWremAgqzcsd4WM4B70BJ06E0GJBTK_J3cJLqYeeDuzFzGgYv1xKC5yHZZ8i-xGeOkWBOlXZAAaARaqNpiJyTRON20vsVlEiD0QSX04L_OEyoYyAJm8CtxY03fPQ4BUFmMurawv_s_518T2ILlq_CEC-KIiJNIyxybdbHLqcqCr-jELNY');"></div>
+<div class="absolute inset-0 hero-split-overlay"></div>
+<div class="absolute inset-0 flex items-end p-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<span class="text-white/40 text-8xl font-black uppercase tracking-tighter">Male</span>
+</div>
+</div>
+<!-- Women Side -->
+<div class="relative w-1/2 h-full group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Editorial fashion photography female model in minimalist outfit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTD3UOFhS7Fri7x_9mxIAhLgaQfWglU46-a_Vf5a9BsqVf-e--sGzV_WqNs9VFyzsJgQFbp_DVtXZRrBy16cEVOQRe7OB_SYdJ2zEj9qxnSl8gKBEm1KCAII3BbBXbTRDFVgdo_LSHFxDCJMQZ7x_Eu5GuAyxN2zfpMRehTJuRQIwN4tn7v54b9mvu1FXez9UlDXwvIS5MMBakncFMJQw6ACi6Z7Tn0SPFtr8cU7Td7-abeWbS0Dhi9_vs3wVOJmRhjcGRwxaAQJc');"></div>
+<div class="absolute inset-0 hero-split-overlay"></div>
+<div class="absolute inset-0 flex items-end p-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<span class="text-white/40 text-8xl font-black uppercase tracking-tighter">Female</span>
+</div>
+</div>
+<!-- Hero Text Overlay -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center text-center">
+<div class="max-w-2xl px-6 pointer-events-auto">
+<div class="mb-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+<span class="text-[10px] uppercase font-extrabold tracking-[0.2em]">Next-Gen Fashion Analysis</span>
+</div>
+<h1 class="text-white text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter mb-6 uppercase">
+                        Your Personal <br/><span class="text-primary italic">AI Stylist</span>
+</h1>
+<p class="text-white/80 text-lg md:text-xl font-normal leading-relaxed mb-10 max-w-lg mx-auto">
+                        Discover outfits tailored to your unique taste, powered by advanced fashion intelligence.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto min-w-[180px] bg-white text-background-dark hover:bg-primary hover:text-white px-8 py-4 rounded-lg font-bold uppercase tracking-widest transition-all">
+                            Shop Men
+                        </button>
+<button class="w-full sm:w-auto min-w-[180px] bg-background-dark/50 backdrop-blur-lg border border-white/20 hover:border-primary text-white px-8 py-4 rounded-lg font-bold uppercase tracking-widest transition-all">
+                            Shop Women
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured In Bar -->
+<div class="bg-background-dark py-12 border-y border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<p class="text-center text-white/30 text-xs font-bold uppercase tracking-[0.3em] mb-8">As Featured In</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale contrast-125">
+<span class="text-2xl font-black tracking-tighter uppercase italic">Vogue</span>
+<span class="text-2xl font-serif font-bold tracking-widest uppercase">GQ</span>
+<span class="text-2xl font-extrabold tracking-tight uppercase">Hypebeast</span>
+<span class="text-2xl font-bold tracking-tighter uppercase italic underline decoration-primary">Elle</span>
+<span class="text-2xl font-black tracking-tight uppercase">Highsnobiety</span>
+</div>
+</div>
+</div>
+<!-- AI Difference Section -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-20 items-center mb-24">
+<div>
+<h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-tighter uppercase leading-tight mb-6">
+                        The Intelligence Behind <br/><span class="text-primary">Every Stitch.</span>
+</h2>
+<p class="text-white/60 text-lg leading-relaxed mb-8">
+                        Our proprietary algorithms analyze millions of data points from global runway trends, street style, and social media to curate pieces that don't just fit your body, but your lifestyle.
+                    </p>
+<div class="grid sm:grid-cols-2 gap-6">
+<div class="flex flex-col gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+<h3 class="font-bold uppercase tracking-wide">Deep Analysis</h3>
+<p class="text-sm text-white/50">Scanning 5,000+ brands daily for real-time trend updates.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">straighten</span>
+<h3 class="font-bold uppercase tracking-wide">Perfect Fit</h3>
+<p class="text-sm text-white/50">AI-calculated sizing across different international brands.</p>
+</div>
+</div>
+</div>
+<div class="relative h-[500px] rounded-2xl overflow-hidden border border-white/10">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Clothing rack with minimalist designer pieces" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApS7cSBSJiXfo95yVRmog8Pful8Onr0P6bWDsrbb45ssVymh_tmZ2yBZ0HyoBPIYAv_oap4T-62zF_IitCsxobQq_dDee3usqZ9e1K0w-Xv0DvfmXHyzervAXFv5zp6p--n0LzU2W8aKONwR6_b7wS1Da9Pe94swH7uA9H75tGkZZhg2IOZXWvIkjb5vnnO5-NgyvWAhR9s2ZJ3hRiwOuDz6z2nHntOEWUii5Z4XDH-WgXL7HQk74xrG3lqcU14IJXdQQ8s4h6hsc');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 p-6 bg-background-dark/80 backdrop-blur-md rounded-xl border border-white/10">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<p class="text-xs text-primary font-black uppercase">Live Scanning</p>
+<p class="text-sm font-medium">Matching your wardrobe preferences...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Features Grid -->
+<div class="grid md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-5 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all">
+<div class="size-12 rounded-xl bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">search_insights</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2 uppercase tracking-tight">Analyze</h4>
+<p class="text-white/50 leading-relaxed">We scan global retail markets to find pieces that align with your specific visual aesthetic.</p>
+</div>
+</div>
+<div class="flex flex-col gap-5 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all">
+<div class="size-12 rounded-xl bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">auto_fix_high</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2 uppercase tracking-tight">Curate</h4>
+<p class="text-white/50 leading-relaxed">Our AI simulates thousands of outfit combinations to select the ones that look best on your profile.</p>
+</div>
+</div>
+<div class="flex flex-col gap-5 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all">
+<div class="size-12 rounded-xl bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">local_shipping</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2 uppercase tracking-tight">Deliver</h4>
+<p class="text-white/50 leading-relaxed">Receive a personalized lookbook directly to your device, ready to shop with one single click.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended Gallery -->
+<section class="py-24 bg-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-extrabold uppercase tracking-tighter mb-2">AI-Recommended Outfits</h2>
+<p class="text-white/40">Real-time suggestions based on current fashion pulse.</p>
+</div>
+<button class="text-sm font-bold uppercase tracking-widest text-primary flex items-center gap-2 hover:gap-4 transition-all">
+                        View All Trends <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="space-y-4 group cursor-pointer">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden relative border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Editorial yellow monochrome outfit for women" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOpHEFLYJDh6PBeyJicQHuhEzBVLw_wAJqxtVBQeBCBm7JdMLYf3hC515LYRbIdO2uAzHafFzHIe6wWxOeuavSU9psTr6jCXOQ2Yb5PNEYc5uyNrhWA0CzJhz23D4LzgQH3cnbuv2I1zLHe-HNZOW2sHUy5uNdwVzDRV_MPE1n6gmVwksdWD9-D7JulnN4hF4cgKZXhGM68vYWV-Zd24_Hb54MjZToT80LQ-ixbpxUOn8NtGrqkHqIQgNne-Z13s6CLdzdI_R6NVw');"></div>
+<div class="absolute top-4 right-4 bg-background-dark/60 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Streetwear</div>
+</div>
+<div class="px-2">
+<p class="font-bold text-sm uppercase tracking-tight">Monochrome Minimalist</p>
+<p class="text-white/40 text-xs">Curated by Aesthetic-Bot-4</p>
+</div>
+</div>
+<div class="space-y-4 group cursor-pointer">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden relative border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Mens smart casual linen suit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJvSnHFCbwGy6oeuYa26datQd8UgwKr3jbwFrlDRgvuuesP_M6hIhwtt53ucxuTC5nWZ8d3HWi7nC-aTId3dUyZ3Y7yNRcI_WDQz1B04boh9E-Uu7QnQsP0Uz3wlMnZbrtLGnvgoh2Eiy9Jh4mFJcIwPFtpruo6JXhdqZcA8OVNbl9I9jcqqOBJPszPUnT3FulW7yds07IKWxv7Act7wkHtUEeNIwqJn0SZl7ouDuGblWw7g7KKQAFdiCe0efUG7c9GjxKFalbcU8');"></div>
+<div class="absolute top-4 right-4 bg-background-dark/60 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Smart Casual</div>
+</div>
+<div class="px-2">
+<p class="font-bold text-sm uppercase tracking-tight">The Modern Professional</p>
+<p class="text-white/40 text-xs">98% Match with your style</p>
+</div>
+</div>
+<div class="space-y-4 group cursor-pointer">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden relative border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Luxury evening gown editorial photography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA43hHAuhMRTjyGkqK6vsQAj36PWovrLQXDbbnrFKiv6ic-wpBDoHToMljb-TL0_TAlNO7iE6Pb2AZfsfZdvMnKb42gB2VoXc3IthfglJvZeF2tUh1B5nuiGGF3odqav75riCwCi4UyesQI3FX0Ou0lBb8elr9lBZzWzDgKa7ygpC7o5VuUzzvo7pgwXVqiegPDQhDzsydJ-ksC3sJT00FB-9X3giGPGjXPrZQRtK0rlFBICmL6yGdS6QIfAYKi_BMa3kvOS-TpY7U');"></div>
+<div class="absolute top-4 right-4 bg-background-dark/60 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Evening</div>
+</div>
+<div class="px-2">
+<p class="font-bold text-sm uppercase tracking-tight">The Gala Selection</p>
+<p class="text-white/40 text-xs">Trending in Milan</p>
+</div>
+</div>
+<div class="space-y-4 group cursor-pointer">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden relative border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Oversized designer menswear outfit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5-afdWKwG4UBM3UMO5NapssO8oeq-hVEKtB2bH6TgVTOWZ3jmdjvkSAQKSYqw76XtLukSWb8KRhGZUj4w9b9nyctu7EVeXwD7BZraAYS3KkoDhyO6moAi6KoXN2Wr8CF09u-bHaAjy-rRGXuGJK0mPvOtaZwxLWAC5mE99a5fUVYC2OcSrj_zGkRmEARYDJxerJ7W3WaUfTFue60jOxnPoy2CeFUR_rCWr7kqaogdnDq27nZUYrI8Rh_glHUVrcAZM5EGgJU0bvQ');"></div>
+<div class="absolute top-4 right-4 bg-background-dark/60 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Avant-Garde</div>
+</div>
+<div class="px-2">
+<p class="font-bold text-sm uppercase tracking-tight">Structured Volume</p>
+<p class="text-white/40 text-xs">New Arrival Recommendation</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-24 px-6">
+<div class="max-w-4xl mx-auto bg-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+<!-- Abstract Design Elements -->
+<div class="absolute top-0 right-0 size-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 size-64 bg-black/20 rounded-full blur-3xl -ml-32 -mb-32"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-5xl font-extrabold uppercase tracking-tighter mb-6 leading-none">
+                        Ready for Your New Wardrobe?
+                    </h2>
+<p class="text-white/90 text-lg mb-10 max-w-xl mx-auto">
+                        Sign up for our early access beta and receive your first AI-stylized lookbook for free.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input class="flex-1 bg-white/20 border border-white/30 rounded-xl px-6 py-4 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Enter your email" type="email"/>
+<button class="bg-white text-primary font-bold px-8 py-4 rounded-xl hover:scale-105 transition-transform uppercase tracking-widest text-sm">
+                            Subscribe
+                        </button>
+</div>
+<p class="mt-6 text-white/50 text-xs font-bold uppercase tracking-[0.2em]">Join 50,000+ fashion enthusiasts</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark border-t border-white/10 py-16 px-6">
+<div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<div class="size-6 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+</div>
+<h2 class="text-white text-lg font-extrabold tracking-tighter uppercase">Style <span class="text-primary">AI</span></h2>
+</div>
+<p class="text-white/40 text-sm max-w-sm mb-8">
+                    Defining the future of fashion through machine learning and human artistry. Your personal stylist, reimagined for the digital age.
+                </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">public</span>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Company</h3>
+<ul class="space-y-4 text-sm text-white/50">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Legal</h3>
+<ul class="space-y-4 text-sm text-white/50">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:row justify-between items-center gap-4">
+<p class="text-white/30 text-[10px] uppercase font-bold tracking-[0.2em]">© 2024 Style AI Technologies. All rights reserved.</p>
+<p class="text-white/30 text-[10px] uppercase font-bold tracking-[0.2em]">Designed for Modern Excellence</p>
+</div>
+</footer>
+</body></html>
