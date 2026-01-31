@@ -182,7 +182,7 @@ const RecommendationModal = ({ isOpen, onClose, gender, onSuccess }) => {
                                             <p className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">
                                                 {preview ? "Image Captured" : "Drag & Drop Image"}
                                             </p>
-                                            <p className="text-xs text-white/30 font-medium">Aesthetic Analysis Ready</p>
+                                            <p className="text-xs text-white/30 font-medium">Skin Tone & Aesthetic Analysis Ready</p>
                                         </div>
                                     </div>
                                 </div>

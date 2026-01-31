@@ -14,6 +14,18 @@ const StylePage = ({ gender, onBack }) => {
     const [isAuthOpen, setIsAuthOpen] = useState(false);
     const [authTab, setAuthTab] = useState('login');
 
+    const fallbackMale = [
+        { id: 101, name: "Premium Navy Suit", type: "Formal", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&h=600&fit=crop" },
+        { id: 102, name: "Linen Summer Shirt", type: "Casual", image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&h=600&fit=crop" },
+        { id: 103, name: "Urban Bomber Jacket", type: "Streetwear", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=600&fit=crop" }
+    ];
+
+    const fallbackFemale = [
+        { id: 201, name: "Silk Evening Gown", type: "Formal", image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=600&fit=crop" },
+        { id: 202, name: "High-Rise Trousers", type: "Chic", image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&h=600&fit=crop" },
+        { id: 203, name: "Fitted Wool Blazer", type: "Smart Casual", image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=500&h=600&fit=crop" }
+    ];
+
     console.log("StylePage mounting for gender:", gender);
     useEffect(() => {
         const fetchTrending = async () => {
@@ -22,6 +34,8 @@ const StylePage = ({ gender, onBack }) => {
                 setTrending(response.data);
             } catch (error) {
                 console.error("Error fetching trending:", error);
+                // Apply high-quality fallbacks on fail
+                setTrending(gender === 'Male' ? fallbackMale : fallbackFemale);
             } finally {
                 setLoading(false);
             }
@@ -76,41 +90,39 @@ const StylePage = ({ gender, onBack }) => {
                     </nav>
 
                     <div className="flex items-center gap-6">
-                        <div className="flex items-center gap-6">
-                            {user ? (
-                                <div className="flex items-center gap-4 group/profile relative">
-                                    <div className="text-right hidden sm:block">
-                                        <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-0.5">Styling For</p>
-                                        <p className="text-sm font-bold uppercase tracking-tight">{user.name}</p>
-                                    </div>
-                                    <div className="size-10 bg-primary rounded-full flex items-center justify-center text-sm font-black text-white shadow-[0_0_15px_var(--color-primary-glow)] border border-white/20">
-                                        {user.initials}
-                                    </div>
-                                    <button
-                                        onClick={logout}
-                                        className="absolute -bottom-12 right-0 bg-background-dark/95 border border-white/10 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-white hover:bg-white/5 transition-all opacity-0 group-hover/profile:opacity-100 flex items-center gap-2 shadow-2xl backdrop-blur-md z-[60]"
-                                    >
-                                        <LogOut className="w-3 h-3" />
-                                        Sign Out
-                                    </button>
+                        {user ? (
+                            <div className="flex items-center gap-4 group/profile relative">
+                                <div className="text-right hidden sm:block">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-0.5">Styling For</p>
+                                    <p className="text-sm font-bold uppercase tracking-tight">{user.name}</p>
                                 </div>
-                            ) : (
-                                <div className="flex items-center gap-6">
-                                    <button
-                                        onClick={() => openAuth('login')}
-                                        className="text-white/70 text-sm font-bold hover:text-white transition-colors uppercase tracking-widest"
-                                    >
-                                        Login
-                                    </button>
-                                    <button
-                                        onClick={() => openAuth('signup')}
-                                        className="bg-primary hover:bg-primary/90 text-white px-8 py-2.5 rounded-xl text-xs font-black tracking-widest transition-all shadow-lg shadow-[0_0_15px_var(--color-primary-glow)] uppercase"
-                                    >
-                                        Sign Up
-                                    </button>
+                                <div className="size-10 bg-primary rounded-full flex items-center justify-center text-sm font-black text-white shadow-[0_0_15px_var(--color-primary-glow)] border border-white/20">
+                                    {user.initials}
                                 </div>
-                            )}
-                        </div>
+                                <button
+                                    onClick={logout}
+                                    className="absolute -bottom-12 right-0 bg-background-dark/95 border border-white/10 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-white hover:bg-white/5 transition-all opacity-0 group-hover/profile:opacity-100 flex items-center gap-2 shadow-2xl backdrop-blur-md z-[60]"
+                                >
+                                    <LogOut className="w-3 h-3" />
+                                    Sign Out
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="flex items-center gap-6">
+                                <button
+                                    onClick={() => openAuth('login')}
+                                    className="text-white/70 text-sm font-bold hover:text-white transition-colors uppercase tracking-widest"
+                                >
+                                    Login
+                                </button>
+                                <button
+                                    onClick={() => openAuth('signup')}
+                                    className="bg-primary hover:bg-primary/90 text-white px-8 py-2.5 rounded-xl text-xs font-black tracking-widest transition-all shadow-lg shadow-[0_0_15px_var(--color-primary-glow)] uppercase"
+                                >
+                                    Sign Up
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </header>
@@ -133,7 +145,7 @@ const StylePage = ({ gender, onBack }) => {
                             <p className="text-white/70 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-lg">
                                 Experience the pinnacle of {gender.toLowerCase()}'s fashion, curated by next-generation artificial intelligence.
                             </p>
-                            <div className="flex flex-col sm:row gap-4">
+                            <div className="flex flex-col gap-4">
                                 <button
                                     onClick={() => setIsModalOpen(true)}
                                     className="inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm transition-all shadow-[0_0_30px_var(--color-primary-glow)] hover:scale-105"

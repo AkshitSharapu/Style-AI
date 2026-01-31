@@ -172,16 +172,18 @@ app.post('/recommend/image', upload.single('file'), async (req, res) => {
             return res.status(400).json({ detail: 'No file uploaded' });
         }
 
-        const prompt = `Analyze this image of a clothing item or a person. Suggest 2-3 complementary items to complete the outfit 
-for a ${gender}. 
+        const prompt = `Analyze this image primarily focusing on the person's skin tone and overall aesthetic. 
+Suggest 2-3 complementary clothing items and colors that specifically enhance their natural skin tone for a ${gender}. 
+Explain why these specific colors and styles work well with their skin tone in the styling tips.
+
 Return the response in STRICT JSON format:
 {
-    "analysis": "Brief description of what you see.",
+    "analysis": "Specific analysis of skin tone and visual vibe.",
     "recommendations": [
-        {"item": "item_name", "description": "why it matches"},
-        {"item": "item_name", "description": "why it matches"}
+        {"item": "item_name", "description": "how this color/style complements their skin tone"},
+        {"item": "item_name", "description": "how this color/style complements their skin tone"}
     ],
-    "styling_tips": "Overall advice."
+    "styling_tips": "Detailed advice on color palettes and textures that suit their unique complexion."
 }`;
 
         const responseText = await tryGenerateContent(prompt, file);
