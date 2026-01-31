@@ -129,17 +129,17 @@ const StylePage = ({ gender, onBack }) => {
 
             <main className="pt-16">
                 {/* Gender-Specific Hero */}
-                <section className="relative h-[80vh] min-h-[600px] w-full flex items-center overflow-hidden">
+                <section className="relative h-[85vh] min-h-[700px] w-full flex flex-col items-start overflow-hidden">
                     <div className="absolute inset-0 bg-center bg-cover scale-105" style={{ backgroundImage: `url('${heroImages[gender]}')` }}></div>
                     <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/40 to-transparent"></div>
 
-                    <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-                        <div className="max-w-2xl">
+                    <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-24 md:pt-32">
+                        <div className="max-w-3xl">
                             <div className="mb-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
                                 <TrendingUp className="text-primary w-4 h-4" />
                                 <span className="text-[10px] uppercase font-extrabold tracking-[0.2em]">{gender} Curated Showcase</span>
                             </div>
-                            <h1 className="text-white text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 uppercase">
+                            <h1 className="text-white text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter mb-8 uppercase">
                                 Modern <br /><span className="text-primary italic">{gender} Luxury</span>
                             </h1>
                             <p className="text-white/70 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-lg">
